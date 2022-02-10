@@ -19,41 +19,7 @@ function computerPlay() {
     
 }
 
-// function playRound(playerSelection, computerSelection)  {
-//     
-//     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-//     console.log(playerSelection)
-//     if (playerSelection === "Rock") {
-//         if (computerSelection === "Rock") {
-//             return "It's a tie!"
-//         } else if (computerSelection === "Paper") {
-//             return "You Lose! Paper beats Rock"
-//         } else {
-//             playerScore += 1
-//             return "You Win! Rock beats Scissor"
-//         }
-//     } else if (playerSelection === "Paper") {
-//         if (computerSelection === "Rock") {
-//             playerScore += 1
-//             return "You Win! Paper beats Rock"
-//         } else if (computerSelection === "Paper") {
-//             return "It's a tie!"
-//         } else {
-//             computerScore += 1
-//             return "You Lose! Scissor beats Paper"
-//         }
-//     } else {
-//         if (computerSelection === "Rock") {
-//             computerScore += 1
-//             return "You Lose! Rock beats Scissor"
-//         } else if (computerSelection === "Paper") {
-//             playerScore += 1
-//             return "You Win! Scissor beats Paper"
-//         } else {
-//             return "It's a tie!"
-//         }
-//     }
-// }
+
 function playRound(playerSelection, computerSelection)  {
     
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
@@ -85,9 +51,14 @@ function playRound(playerSelection, computerSelection)  {
 for (let i = 0; i < 5; i++) {
     computerSelection = computerPlay()
     playerSelection = (prompt("PLease choose your move: ")).toLowerCase();
-    console.log(playRound(playerSelection,computerSelection))
-    console.log("player: " + playerSelection + ", computer: " + computerSelection)
-    console.log("Player scores: "+ playerScore)
-    console.log("computer scores: "+ computerScore)
+    if (playerSelection !== "rock" || playerSelection !== "paper" || playerSelection !== "scissor") {
+        console.log("Please Enter a valid input")
+    } else {
+        console.log(playRound(playerSelection,computerSelection))
+        console.log("player: " + playerSelection + ", computer: " + computerSelection)
+        console.log("Player scores: "+ playerScore)
+        console.log("computer scores: "+ computerScore)
+    }
+    
 }
 
